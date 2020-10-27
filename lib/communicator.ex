@@ -32,7 +32,7 @@ defmodule LoRa.Communicator do
   end
 
   def single_transfer(spi, address, value) do
-    {:ok, resp} = SPI.transfer(spi.pid, <<address, value>>)
+    {:ok, <<_, resp>>} = SPI.transfer(spi.pid, <<address, value>>)
     resp
   end
 end
