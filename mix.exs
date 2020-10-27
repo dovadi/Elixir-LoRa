@@ -32,7 +32,7 @@ defmodule LoRa.MixProject do
   defp description do
     """
     This is a module for transmitter data using LoRa Radios.
-  
+
     Radios:
         Semtech SX1276/77/78/79 based boards.
     """
@@ -48,7 +48,8 @@ defmodule LoRa.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:elixir_ale, "~> 1.2"},
+      {:circuits_gpio, "~> 0.4.6"},
+      {:circuits_spi, "~> 0.1.5"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
