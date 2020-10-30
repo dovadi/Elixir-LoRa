@@ -120,8 +120,9 @@ defmodule LoRa do
   def handle_info(:receiver_mode, state) do
     if state.is_receiver? do
       Modem.parse_packet(self(), state.spi)
-      Process.send_after(self(), :receiver_mode, 100)
     end
+
+    Process.send_after(self(), :receiver_mode, 100)
 
     {:noreply, state}
   end
